@@ -458,7 +458,7 @@ $('#cnt').textContent=M.length;$('#free').textContent=M.filter(m=>m.z!=='caminit
 const HAS_MAP=!!window.L;
 let map=null;
 if(HAS_MAP){map=L.map('map',{scrollWheelZoom:false,zoomControl:true});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:19,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'}).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 var markers=M.map((m,i)=>{const c=Z[m.z];
   const icon=L.divIcon({className:'',html:`<div class="pin" style="background:linear-gradient(135deg,${c.c1},${c.c2})"><span>${i+1}</span></div>`,iconSize:[30,30],iconAnchor:[15,30],popupAnchor:[0,-28]});
   const mk=L.marker([m.lat,m.lng],{icon,title:m.n}).addTo(map);
@@ -503,7 +503,7 @@ $('#yr').textContent=new Date().getFullYear();
 const LEGAL={
  aviso:`<h3>Aviso legal</h3><p>Asómate Málaga es una guía informativa sobre miradores y rutas de la provincia de Málaga. Los datos del titular se publicarán aquí al iniciar la actividad.</p><p>La información de accesos, horarios y normas puede cambiar. Antes de ir, consulta las fuentes oficiales (por ejemplo, la web oficial del Caminito del Rey o la Junta de Andalucía para el Parque Natural Montes de Málaga). Practica senderismo bajo tu propia responsabilidad.</p>`,
  privacidad:`<h3>Política de privacidad</h3><p>Esta web no tiene formularios ni recoge datos personales de los visitantes.</p><p>Al pulsar enlaces externos (Google Maps, Amazon, Civitatis, Booking) pasas a sus webs, que aplican sus propias políticas de privacidad.</p>`,
- cookies:`<h3>Política de cookies</h3><p>Esta web no instala cookies propias ni de analítica. El mapa usa imágenes de OpenStreetMap y CARTO, que no requieren cookies.</p><p>Los sitios a los que enlazamos (Amazon, Civitatis, Booking) pueden usar cookies cuando los visitas para identificar que llegas desde esta web.</p>`};
+ cookies:`<h3>Política de cookies</h3><p>Esta web no instala cookies propias ni de analítica. El mapa usa imágenes de OpenStreetMap, que no requieren cookies.</p><p>Los sitios a los que enlazamos (Amazon, Civitatis, Booking) pueden usar cookies cuando los visitas para identificar que llegas desde esta web.</p>`};
 </script>
 </body>
 </html>
